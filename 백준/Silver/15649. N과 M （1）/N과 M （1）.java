@@ -4,7 +4,8 @@ public class Main {
  
 	public static int[] arr;
 	public static boolean[] visit;
- 
+	public static StringBuilder sb = new StringBuilder();	
+    
 	public static void main(String[] args) {
  
 		Scanner in = new Scanner(System.in);
@@ -15,15 +16,15 @@ public class Main {
 		arr = new int[M];
 		visit = new boolean[N];
 		dfs(N, M, 0);
- 
+		System.out.println(sb);
 	}
  
 	public static void dfs(int N, int M, int depth) {
 		if (depth == M) {
 			for (int val : arr) {
-				System.out.print(val + " ");
+				sb.append(val).append(' ');
 			}
-			System.out.println();
+			sb.append('\n');
 			return;
 		}
  
@@ -36,4 +37,5 @@ public class Main {
 			}
 		}
 	}
+ 
 }
